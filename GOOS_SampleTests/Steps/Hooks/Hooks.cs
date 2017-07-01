@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using FluentAutomation;
+using GOOS_Sample.Models;
 using GOOS_SampleTests.DataModelsForIntegrationTest;
+using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
 
 namespace GOOS_SampleTests.Steps.Hooks
@@ -8,6 +10,19 @@ namespace GOOS_SampleTests.Steps.Hooks
     [Binding]
     public sealed class Hooks
     {
+        [BeforeTestRun()]
+        public static void RegisterDIContainer()
+        {
+            UnityContainer = new UnityContainer();
+            UnityContainer.RegisterType<IBudgetService, BudgetService>();
+        }
+
+        public static IUnityContainer UnityContainer
+        {
+            get;
+            set;
+        }
+
         [BeforeFeature()]
         [Scope(Tag = "web")]
         public static void SetBrowser()

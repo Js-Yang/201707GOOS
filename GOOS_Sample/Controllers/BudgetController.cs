@@ -13,12 +13,7 @@ namespace GOOS_Sample.Controllers
         {
             this.budgetService = budgetService;
         }
-
-        public BudgetController()
-        {
-            this.budgetService = new BudgetService();
-        }
-
+        
         // GET: Budget
         public ActionResult Add()
         {

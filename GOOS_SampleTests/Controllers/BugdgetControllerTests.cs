@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using GOOS_Sample.Controllers;
+﻿using GOOS_Sample.Controllers;
 using GOOS_Sample.Models;
 using GOOS_Sample.Models.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
