@@ -21,7 +21,7 @@ namespace GOOS_SampleTests
         {
             this._budgetController = new BudgetController();
         }
-
+        
         [When(@"add a budget")]
         public void WhenAddABudget(Table table)
         {
