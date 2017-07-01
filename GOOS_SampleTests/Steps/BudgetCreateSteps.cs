@@ -67,12 +67,4 @@ namespace GOOS_SampleTests.Steps
             I.Assert.Text(message).In("#message");
         }
     }
-
-    internal class PageContext
-    {
-        public static string Domain
-        {
-            get { return "http://localhost:58527"; }
-        }
-    }
 }
