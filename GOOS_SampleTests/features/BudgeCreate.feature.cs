@@ -76,11 +76,11 @@ namespace GOOS_SampleTests.Features
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
-        testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
-        testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
-        testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

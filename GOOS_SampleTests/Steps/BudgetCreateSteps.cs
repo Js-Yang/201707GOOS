@@ -48,26 +48,37 @@ namespace GOOS_SampleTests.Steps
 
         public BudgetCreatePage(FluentTest test) : base(test)
         {
+            this.Url = $"{PageContext.Domain}/budget/add";
         }
 
         public BudgetCreatePage Amount(int amount)
         {
+            I.Enter(amount.ToString()).In("#amount");
             return this;
         }
 
         public BudgetCreatePage Month(string yearMonth)
         {
+            I.Enter(yearMonth).In("#month");
             return this;
         }
 
-        public BudgetCreatePage AddBudget()
+        public void AddBudget()
         {
-            return this;
+            I.Click("input[type=\"submit\"]");
         }
 
         public void ShouldDisplay(string message)
         {
-            throw new NotImplementedException();
+            I.Assert.Text(message).In("#message");
+        }
+    }
+
+    internal class PageContext
+    {
+        public static string Domain
+        {
+            get { return "http://localhost:58527"; }
         }
     }
 }
