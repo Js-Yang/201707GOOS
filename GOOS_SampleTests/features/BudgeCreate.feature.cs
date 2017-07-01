@@ -69,17 +69,38 @@ namespace GOOS_SampleTests.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a budget, butgot duplicate successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a budget")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BudgetCreate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CleanBudgets")]
-        public virtual void AddABudgetButgotDuplicateSuccessfully()
+        public virtual void AddABudget()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a budget, butgot duplicate successfully", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a budget", new string[] {
                         "CleanBudgets"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
+testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a budget, but got duplicate successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BudgetCreate")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CleanBudgets")]
+        public virtual void AddABudgetButGotDuplicateSuccessfully()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a budget, but got duplicate successfully", new string[] {
+                        "CleanBudgets"});
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
 testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -88,12 +109,12 @@ testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFl
             table1.AddRow(new string[] {
                         "999",
                         "2017-10"});
-#line 8
+#line 14
 testRunner.And("Budget table existed budgets", ((string)(null)), table1, "And ");
-#line 11
+#line 17
 testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
-testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+testRunner.Then("it should display \"updated successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
