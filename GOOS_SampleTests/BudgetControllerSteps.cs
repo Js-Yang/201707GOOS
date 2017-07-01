@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using FluentAssertions;
 using GOOS_Sample.Controllers;
 using GOOS_Sample.Models.ViewModels;
+using GOOS_SampleTests.DataModelsForIntegrationTest;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -45,7 +47,13 @@ namespace GOOS_SampleTests
         [Then(@"it should exist a budget record in budget table")]
         public void ThenItShouldExistABudgetRecordInBudgetTable(Table table)
         {
-            ScenarioContext.Current.Pending();
+            using (var dbcontext = new BudgeSystemEntitiesForTest())
+            {
+                var budget = dbcontext.Budgets
+                    .FirstOrDefault();
+                budget.Should().NotBeNull();
+                table.CompareToInstance(budget);
+            }
         }
     }
 }
