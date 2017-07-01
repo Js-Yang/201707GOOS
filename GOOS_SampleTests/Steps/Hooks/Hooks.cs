@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using FluentAutomation;
 using GOOS_Sample.Models;
-using GOOS_SampleTests.DataModelsForIntegrationTest;
 using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
+using GOOS_Sample.Repository;
+using GOOS_SampleTests.DataModelsForIntegrationTest;
+using Budget = GOOS_Sample.Models.DataModels.Budget;
 
 namespace GOOS_SampleTests.Steps.Hooks
 {
@@ -14,6 +16,7 @@ namespace GOOS_SampleTests.Steps.Hooks
         public static void RegisterDIContainer()
         {
             UnityContainer = new UnityContainer();
+            UnityContainer.RegisterType<IRepository<Budget>, BudgetRepository>();
             UnityContainer.RegisterType<IBudgetService, BudgetService>();
         }
 
