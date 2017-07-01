@@ -1,10 +1,13 @@
-﻿using GOOS_Sample.Models.DataModels;
+﻿using System;
+using GOOS_Sample.Models.DataModels;
 using GOOS_Sample.Models.ViewModels;
 
 namespace GOOS_Sample.Models
 {
     public class BudgetService : IBudgetService
     {
+        public event EventHandler Created;
+        public event EventHandler Updated;
         private IRepository<Budget> _budgetRepository;
         
         public BudgetService(IRepository<Budget> budgetRepository)
@@ -14,10 +17,10 @@ namespace GOOS_Sample.Models
 
         public void Create(BudgetAddViewModel model)
         {
-
             var budget = new Budget() { Amount = model.Amount, YearMonth = model.Month };
             this._budgetRepository.Save(budget);
             
         }
+
     }
 }
