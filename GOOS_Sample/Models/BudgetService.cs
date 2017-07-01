@@ -5,6 +5,13 @@ namespace GOOS_Sample.Models
 {
     public class BudgetService : IBudgetService
     {
+        private IRepository<Budget> _budgetRepository;
+        
+        public BudgetService(IRepository<Budget> budgetRepository)
+        {
+            _budgetRepository = budgetRepository;
+        }
+
         public void Create(BudgetAddViewModel model)
         {
             using (var dbcontext = new BudgeSystemEntities())

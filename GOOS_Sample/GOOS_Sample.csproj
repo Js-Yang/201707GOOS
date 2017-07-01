@@ -214,6 +214,7 @@
     </Compile>
     <Compile Include="Models\IBudgetService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\BudgetAddViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
